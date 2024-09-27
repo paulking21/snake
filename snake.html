@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui-overlay">
+      <div id="score">Score: <span id="score-value">0</span></div>
+      <div id="high-score">High Score: <span id="high-score-value">0</span> by <span id="high-score-name"></span></div>
+      <div id="game-mode">Mode: <span id="game-mode-value">Classic</span></div>
+    </div>
+    <div id="info-icon">ⓘ</div>
+    <div id="legend" style="display: none;">
+      <h3>Food Legend</h3>
+      <div id="legend-items"></div>
+    </div>
+    <div id="menu">
+      <h1>Ultimate Snake Game</h1>
+      <button id="start-game">Start Game</button>
+      <select id="game-mode-select">
+        <option value="classic">Classic</option>
+        <option value="speed">Speed Demon</option>
+        <option value="maze">Maze Runner</option>
+      </select>
+    </div>
+    <div id="game-over" class="hidden">
+      <h2>Game Over!</h2>
+      <p>Your Score: <span id="final-score"></span></p>
+      <div id="new-high-score" class="hidden">
+        <p>New High Score!</p>
+        <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
+        <button id="submit-score">Submit Score</button>
+      </div>
+      <select id="game-mode-select-end">
+        <option value="classic">Classic</option>
+        <option value="speed">Speed Demon</option>
+        <option value="maze">Maze Runner</option>
+      </select>
+      <button id="restart-game" disabled>Play Again</button>
+    </div>
+  </div>
+  <script src="snake.js"></script>
+</body>
+</html>
