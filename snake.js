@@ -600,19 +600,19 @@ document.addEventListener('keydown', e => {
   if (!gameOver) {
     if (!gameStarted) {
       gameStarted = true;
-      switch (e.key) {
-        case 'ArrowUp': direction = 'up'; break;
-        case 'ArrowDown': direction = 'down'; break;
-        case 'ArrowLeft': direction = 'left'; break;
-        case 'ArrowRight': direction = 'right'; break;
-        default: return; // If it's not an arrow key, don't start the game
+      switch (e.key.toLowerCase()) {
+        case 'w': direction = 'up'; break;
+        case 's': direction = 'down'; break;
+        case 'a': direction = 'left'; break;
+        case 'd': direction = 'right'; break;
+        default: return; // If it's not a WASD key, don't start the game
       }
     } else {
-      switch (e.key) {
-        case 'ArrowUp': if (direction !== 'down') direction = 'up'; break;
-        case 'ArrowDown': if (direction !== 'up') direction = 'down'; break;
-        case 'ArrowLeft': if (direction !== 'right') direction = 'left'; break;
-        case 'ArrowRight': if (direction !== 'left') direction = 'right'; break;
+      switch (e.key.toLowerCase()) {
+        case 'w': if (direction !== 'down') direction = 'up'; break;
+        case 's': if (direction !== 'up') direction = 'down'; break;
+        case 'a': if (direction !== 'right') direction = 'left'; break;
+        case 'd': if (direction !== 'left') direction = 'right'; break;
       }
     }
   }
